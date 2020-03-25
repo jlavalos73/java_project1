@@ -12,8 +12,8 @@ public class Reimbursements {
 	private LocalDateTime resolved;
 	private String description;
 	private Blob receipt;
-	private Users author;
-	private Users resolver;
+	private int author;
+	private int resolver;
 	private Status rStatus;
 	private Type rType;
 	
@@ -23,14 +23,13 @@ public class Reimbursements {
 	}
 
 	public Reimbursements(int reimId, double amount, LocalDateTime submitted, LocalDateTime resolved,
-			String description, Blob receipt, Users author, Users resolver, Status rStatus, Type rType) {
+			String description, int author, int resolver, Status rStatus, Type rType) {
 		super();
 		this.reimId = reimId;
 		this.amount = amount;
 		this.submitted = submitted;
 		this.resolved = resolved;
 		this.description = description;
-		this.receipt = receipt;
 		this.author = author;
 		this.resolver = resolver;
 		this.rStatus = rStatus;
@@ -85,19 +84,23 @@ public class Reimbursements {
 		this.receipt = receipt;
 	}
 
-	public Users getAuthor() {
+	public int getAuthor(Users usr) {
+		int author = usr.getUserId();
 		return author;
 	}
 
-	public void setAuthor(Users author) {
+	public void setAuthor(Users usr) {
+		int author = usr.getUserId();
 		this.author = author;
 	}
 
-	public Users getResolver() {
+	public int getResolver(Users usr) {
+		int resolver = usr.getUserId();
 		return resolver;
 	}
 
-	public void setResolver(Users resolver) {
+	public void setResolver(Users usr) {
+		int resolver = usr.getUserId();
 		this.resolver = resolver;
 	}
 
