@@ -141,7 +141,7 @@ public class UsersDAOImp implements UsersDAO{
 
 	@Override
 	public Users findByUsername(String username) {
-Users usr = new Users();
+		Users usr = new Users();
 		
 		try(Connection conn = ConnectionUtil.getConnection()){
 			String sql = "SELECT * FROM users WHERE username = ?";
